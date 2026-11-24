@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Tests unitaires') {
             steps {
-                bat 'python -m pytest'
+                bat 'python -m pytest --ignore=Release'
             }
         }
         stage('Création de l artefact') {
