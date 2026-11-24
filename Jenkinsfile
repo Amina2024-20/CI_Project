@@ -45,7 +45,7 @@ pipeline {
             steps {
                 bat '''
                 curl -v --fail ^
-                -u admin:LE_VRAI_MOT_DE_PASSE ^
+                -u admin:nexus123 ^
                 --upload-file Release.zip ^
                 http://localhost:8081/repository/python-release/Release.zip
                 '''
