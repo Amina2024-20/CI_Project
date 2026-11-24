@@ -12,9 +12,15 @@ pipeline {
                 bat 'python -m pip --version'
             }
         }
+
         stage('Installation des dépendances') {
             steps {
                 bat 'python -m pip install -r requirements.txt'
+            }
+        }
+        stage('Analyse qualité du code (Pylint)') {
+            steps {
+                bat 'python -m pylint calculator.py || exit /b 0'
             }
         }
         stage('Tests unitaires') {
