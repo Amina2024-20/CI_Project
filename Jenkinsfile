@@ -44,10 +44,9 @@ pipeline {
         stage('Publication de l artefact') {
             steps {
                 bat '''
-                curl -v --fail ^
-                -u admin:nexus123 ^
-                --upload-file Release.zip ^
-                http://localhost:8081/repository/python-release/Release.zip
+                where curl
+                dir Release.zip
+                curl.exe -v --fail -u "admin:nexus123" --upload-file "%WORKSPACE%\\Release.zip" http://localhost:8081/repository/python-release/Release.zip
                 '''
             }
         }
