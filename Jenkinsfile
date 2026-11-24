@@ -41,6 +41,16 @@ pipeline {
                 '''
             }
         }
+        stage('Publication de l artefact') {
+            steps {
+                bat '''
+                curl -v ^
+                -u admin:TON_MOT_DE_PASSE ^
+                --upload-file Release.zip ^
+                http://localhost:8081/repository/python-release/Release.zip
+                '''
+            }
+        }
 
     }
     post {
