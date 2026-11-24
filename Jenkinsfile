@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clonage') {
             steps {
-                git branch: 'main', url: 'https://github.com/TonUser/CI_Project.git'
+                git branch: 'main', url: 'https://github.com/TON_VRAI_USERNAME/CI_Project.git'
             }
         }
         stage('Vérification Python') {
